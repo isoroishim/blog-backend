@@ -2,16 +2,21 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/tec_blog_db
     username: tec_blog_db
-    password:  Abcdefgo611
+    password: Abcdefgo611
     driver-class-name: org.postgresql.Driver
     hikari:
       pool-name: HikariCP
       maximum-pool-size: 10
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
   batch:
     jdbc:
-      initialize-schema: ALWAYS  # スキーマ初期化の設定（テーブル作成を自動で行う）
+      initialize-schema: ALWAYS
     job:
-      enabled: true  # バッチジョブの有効化
+      enabled: true
     initialization:
-      enabled: true  # バッチの初期化を有効にする
+      enabled: true

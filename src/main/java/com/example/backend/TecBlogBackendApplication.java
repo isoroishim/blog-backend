@@ -1,9 +1,13 @@
-package com.example.backend;  // 必ずこのパッケージが存在することを確認
+package com.example.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@EnableJpaRepositories("com.example.backend.business.repository")
+@EntityScan("com.example.backend.business.model")
 public class TecBlogBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(TecBlogBackendApplication.class, args);
